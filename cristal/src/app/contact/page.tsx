@@ -137,7 +137,7 @@ export default function ContactPage() {
                   {info.details.map((detail, i) => (
                     <div key={i} className="flex flex-col space-y-1">
                       <span className="body-sm text-text-light">{detail.label}</span>
-                      {detail.href ? (
+                      {"href" in detail && detail.href ? (
                         <a
                           href={detail.href}
                           className="body-md text-text-primary hover:text-primary-blue transition-colors duration-300"
