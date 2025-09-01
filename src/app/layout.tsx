@@ -15,8 +15,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Explicitly use the environment variable for Clerk
-  const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  // Explicitly use the environment variable for Clerk with a fallback value
+  const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || "pk_test_placeholder_for_build";
   
   return (
     <ClerkProvider publishableKey={publishableKey}>
